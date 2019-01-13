@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* utilieties */
+
+body {
+    position: relative; 
+    background: #191919;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.8);
+    transition: all 0.5s;
+    z-index: 500;
+}
+.loader-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transform-origin: 100% 100%;
+    animation: loader-line 2s cubic-bezier(.78, 0.27, 0.16, 0.8) forwards;
+}
+
+@keyframes loader-line {
+    0% {
+        transform: scaleX(1);
+    }
+    30% {
+    transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+.about-me {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .about-me .me {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.intro {
+    width: 450px;
+  }
+  .intro .text {
+    display: none;
+  }
+  .intro.go .text {
+    font-family: 'Satisfy', cursive;
+    font-size: 73px;
+    display: block;
+  }
+
+  .intro.go .text-stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 20px;
+    stroke-dashoffset: -350;
+    stroke-dasharray: 2000;
+    stroke-linecap: square;
+    /* stroke-linejoin: miter; */
+    transition: all 0.5s;
+    animation: dash 0.5s ease-in-out forwards;       
+  }
+ 
+  @keyframes dash {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+ 
+  
+  .about-me .me .subtitle {
+    opacity: 0;
+    transition: all 0.3s;
+    font-size: 15px;
+    color: #fff;
+    font-family: Lato, sans-serif;
+    letter-spacing: 1ch;
+    font-weight: 800;
+}
+ 
+.about-me .resume {
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+ 
+  
